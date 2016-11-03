@@ -9,8 +9,8 @@ function virtualenv_install {
 function virtualenv_dep_install {
 
     if [ ! -d venv/bin ]; then
-         python3 -m venv venv
-#	virtualenv venv 
+#         python3 -m venv venv
+	virtualenv venv 
 	echo "Created virtual environment"
     fi
     if [ ! -f venv/updated ]; then
