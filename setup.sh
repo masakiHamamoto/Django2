@@ -31,8 +31,8 @@ echo "Now performing Django tasks"
 pwd
 source venv/bin/activate
 cd mybook
-../venv/bin/python manage.py makemigrations
-../venv/bin/python manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
 deactivate
 
 
