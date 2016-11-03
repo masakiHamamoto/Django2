@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load bootstrap %}
 
-{% block title %}edit comments{% endblock title %}
+{% block title %}Edit details{% endblock title %}
 
 {% block content %}
-    <h3 class="page-header">edit comments</h3>
+    <h3 class="page-header">Edit details</h3>
     {% if impression_id %}
     <form action="{% url 'cms:impression_mod' book_id=book_id impression_id=impression_id %}" method="post" class="form-horizontal" role="form">
     {% else %}

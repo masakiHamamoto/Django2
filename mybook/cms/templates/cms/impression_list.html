@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}List of comments{% endblock title %}
+{% block title %}Details of ToDo{% endblock title %}
 
 {% block extrahead %}
 <script>
@@ -19,13 +19,13 @@ table {
 {% endblock %}
 
 {% block content %}
-    <h3 class="page-header">List of comments <small>{{ book.name }}</small></h3>
+    <h3 class="page-header">Details of ToDo <small>{{ book.name }}</small></h3>
     <a href="{% url 'cms:impression_add' book_id=book.id %}" class="btn btn-default btn-sm">add</a>
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
           <th>ID</th>
-          <th>Comment</th>
+          <th>Details</th>
           <th>Edit</th>
         </tr>
       </thead>

@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load bootstrap %}
 
-{% block title %}books list edit{% endblock title %}
+{% block title %}ToDo List{% endblock title %}
 
 {% block content %}
-    <h3 class="page-header">books list edit</h3>
+    <h3 class="page-header">ToDo List</h3>
     {% if book_id %}
     <form action="{% url 'cms:book_mod' book_id=book_id %}" method="post" class="form-horizontal" role="form">
     {% else %}
