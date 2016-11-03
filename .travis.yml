@@ -1,12 +1,8 @@
 language: python
 python:
-  - "3.2"
-  - "3.3"
-  - "3.4"
-env:
-  - SECRET_KEY=secretkey
+  - "3.5"
 install:
-  - pip install -r requirements.txt
-script:
-  - python mybook/manage.py migrate
+  - chmod +x setup.sh
+  - ./setup.sh
+
 
