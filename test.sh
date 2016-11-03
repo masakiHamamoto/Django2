@@ -2,5 +2,6 @@
 
 python -V
 source venv/bin/activate
-python -V
-python mybook/manage.py test
+../venv/bin/python -V
+../venv/bin/python3 -V
+../venv/bin/python mybook/manage.py test
