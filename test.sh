@@ -3,5 +3,5 @@
 python -V
 source venv/bin/activate
 venv/bin/python -V
-venv/bin/python3 -V
+ls venv/bin/
 venv/bin/python mybook/manage.py test
