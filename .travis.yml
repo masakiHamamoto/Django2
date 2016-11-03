@@ -4,5 +4,7 @@ python:
 install:
   - chmod +x setup.sh
   - ./setup.sh
+script:
+  - echo "hoge"
 
 

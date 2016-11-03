@@ -30,7 +30,7 @@ echo "Now performing Django tasks"
 pwd
 source venv/bin/activate
 cd mybook
-../venv/bin/python manage.py makemigrations cms
+../venv/bin/python manage.py makemigrations
 ../venv/bin/python manage.py migrate
 
 
