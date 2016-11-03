@@ -32,6 +32,6 @@ source venv/bin/activate
 cd mybook
 ../venv/bin/python manage.py makemigrations
 ../venv/bin/python manage.py migrate
-
+deactivate
 
 
