@@ -19,19 +19,19 @@ def book_list(request):
 def book_edit(request, book_id=None):
     """modify books list"""
 #    return HttpResponse('modify')
-    if book_id:  # book_id が指定されている (修正時)
+    if book_id:
         book = get_object_or_404(Book, pk=book_id)
-    else:  # book_id が指定されていない (追加時)
+    else:
         book = Book()
 
     if request.method == 'POST':
-        form = BookForm(request.POST, instance=book)  # POST された request データからフォームを作成
-        if form.is_valid():  # フォームのバリデーション
+        form = BookForm(request.POST, instance=book)
+        if form.is_valid():
             book = form.save(commit=False)
             book.save()
             return redirect('cms:book_list')
-    else:  # GET の時
-        form = BookForm(instance=book)  # book インスタンスからフォームを作成
+    else:
+        form = BookForm(instance=book)
 
     return render(request, 'cms/book_edit.html', dict(form=form, book_id=book_id))
 
@@ -48,11 +48,11 @@ class ImpressionList(ListView):
     """list of comments"""
     context_object_name='impressions'
     template_name='cms/impression_list.html'
-    paginate_by = 2  # １ページは最大2件ずつでページングする
+    paginate_by = 2
 
     def get(self, request, *args, **kwargs):
-        book = get_object_or_404(Book, pk=kwargs['book_id'])  # 親の書籍を読む
-        impressions = book.impressions.all().order_by('id')   # 書籍の子供の、感想を読む
+        book = get_object_or_404(Book, pk=kwargs['book_id'])
+        impressions = book.impressions.all().order_by('id')   #
         self.object_list = impressions
 
         context = self.get_context_data(object_list=self.object_list, book=book)
@@ -60,22 +60,22 @@ class ImpressionList(ListView):
 
 
 def impression_edit(request, book_id, impression_id=None):
-        """感想の編集"""
-        book = get_object_or_404(Book, pk=book_id)  # 親の書籍を読む
-        if impression_id:  # impression_id が指定されている (修正時)
+        """edit"""
+        book = get_object_or_404(Book, pk=book_id)
+        if impression_id:  #
             impression = get_object_or_404(Impression, pk=impression_id)
-        else:  # impression_id が指定されていない (追加時)
+        else:  #
             impression = Impression()
 
         if request.method == 'POST':
-            form = ImpressionForm(request.POST, instance=impression)  # POST された request データからフォームを作成
-            if form.is_valid():  # フォームのバリデーション
+            form = ImpressionForm(request.POST, instance=impression)
+            if form.is_valid():
                 impression = form.save(commit=False)
-                impression.book = book  # この感想の、親の書籍をセット
+                impression.book = book
                 impression.save()
                 return redirect('cms:impression_list', book_id=book_id)
-        else:  # GET の時
-            form = ImpressionForm(instance=impression)  # impression インスタンスからフォームを作成
+        else:
+            form = ImpressionForm(instance=impression)
 
         return render(request,
                       'cms/impression_edit.html',
@@ -83,7 +83,7 @@ def impression_edit(request, book_id, impression_id=None):
 
 
 def impression_del(request, book_id, impression_id):
-    """感想の削除"""
+    """delete"""
     impression = get_object_or_404(Impression, pk=impression_id)
     impression.delete()
     return redirect('cms:impression_list', book_id=book_id)

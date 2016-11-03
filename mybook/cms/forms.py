@@ -3,14 +3,14 @@ from cms.models import Book, Impression
 
 
 class BookForm(ModelForm):
-    """書籍のフォーム"""
+    """form"""
     class Meta:
         model = Book
         fields = ('name', 'publisher', 'page', )
 
 
 class ImpressionForm(ModelForm):
-    """感想のフォーム"""
+    """form"""
     class Meta:
         model = Impression
         fields = ('comment', )

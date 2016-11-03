@@ -1,10 +1,11 @@
 from django.contrib import admin
 from cms.models import Book, Impression
 
+
 # Register your models here.
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'publisher', 'page',)  # 一覧に出したい項目
-    list_display_links = ('id', 'name',)  # 修正リンクでクリックできる項目
+    list_display = ('id', 'name', 'publisher', 'page',)
+    list_display_links = ('id', 'name',)
 admin.site.register(Book, BookAdmin)
 
 
