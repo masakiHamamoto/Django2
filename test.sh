@@ -2,6 +2,6 @@
 
 source venv/bin/activate
 venv/bin/python -V
-ls venv/bin/
+python -V
 cd mybook
 python manage.py test
