@@ -8,4 +8,4 @@ script:
   - chmod +x test.sh
   - ./test.sh
 notifications:
-  email:never
+  email: never
