@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "Install expect"
+which sudo
 sudo apt-get -y install expect
 which expect
 echo "Start the ssh agent"
