@@ -16,6 +16,13 @@ spawn ssh-add deploy_key.pem
 expect \"Enter passphrase for\"
 send \"test\n\"
 "
-ssh ubuntu@ec2-54-229-175-87.eu-west-1.compute.amazonaws.com
+expect -c "
+set timeout 5
+spawn ssh ubuntu@ec2-54-229-175-87.eu-west-1.compute.amazonaws.com/home/ubuntu/
+expect \"Are you sure you want to continue connecting\"
+send \"yes\n\"
+interact
+"
+
 #git remote add deploy 
 #git push deploy master
