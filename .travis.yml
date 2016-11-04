@@ -7,5 +7,11 @@ install:
 script:
   - chmod +x test.sh
   - ./test.sh
+deploy:
+  provider: script
+  script:
+    - chmod +x deploy.sh
+    - deploy.sh
+  skip_cleanup: true
 notifications:
   email: never
