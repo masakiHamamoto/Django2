@@ -1,4 +1,8 @@
 language: python
+addons:
+  apt:
+    packages:
+      - expect
 python:
   - "3.5"
 install:
