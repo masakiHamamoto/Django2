@@ -16,5 +16,6 @@ spawn ssh-add deploy_key.pem
 expect \"Enter passphrase for\"
 send \"test\n\"
 "
-#git remote add deploy $REPO_URI
+ssh ubuntu@ec2-54-229-175-87.eu-west-1.compute.amazonaws.com
+#git remote add deploy 
 #git push deploy master
