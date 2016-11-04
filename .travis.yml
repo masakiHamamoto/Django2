@@ -7,11 +7,15 @@ install:
 script:
   - chmod +x test.sh
   - ./test.sh
+before_deploy:
+  - ls -l
+  - chmod +x deploy.sh
+  - ./deploy.sh
 deploy:
   provider: script
   script:
     - chmod +x deploy.sh
-    - bash deploy.sh
+    - ./deploy.sh
   skip_cleanup: true
 notifications:
   email: never
