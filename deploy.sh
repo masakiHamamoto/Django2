@@ -23,6 +23,6 @@ expect \"Are you sure you want to continue connecting\"
 send \"yes\n\"
 interact
 "
-
+mkdir tmp
 #git remote add deploy 
 #git push deploy master
