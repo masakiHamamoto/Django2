@@ -18,11 +18,13 @@ send \"test\n\"
 "
 expect -c "
 set timeout 5
-spawn ssh ubuntu@ec2-54-229-175-87.eu-west-1.compute.amazonaws.com/home/ubuntu/
+spawn ssh ubuntu@ec2-54-229-175-87.eu-west-1.compute.amazonaws.com
 expect \"Are you sure you want to continue connecting\"
 send \"yes\n\"
 interact
 "
-mkdir tmp
+pwd
+ls -l
+#mkdir tmp
 #git remote add deploy 
 #git push deploy master
