@@ -9,7 +9,7 @@ echo "$DEPLOY_KEY" > deploy_key.pem
 echo "This key should have push access"
 chmod 600 deploy_key.pem
 ssh-add deploy_key.pem
-expect "Enter passphrase for"
+expect "Enter passphrase for deploy_key.pem:"
 send "test"
 #git remote add deploy $REPO_URI
 #git push deploy master
